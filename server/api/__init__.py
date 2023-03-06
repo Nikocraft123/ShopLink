@@ -1,7 +1,8 @@
 from flask import Blueprint
 
-MISSING_VERSION = 1
-INVALID_VERSION = 2
+UNKNOWN = 1
+MISSING_VERSION = 2
+INVALID_VERSION = 3
 
 bp = Blueprint("api", __name__)
 

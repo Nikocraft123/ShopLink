@@ -7,3 +7,9 @@
 # Test files
 **/test*
 
+# Keys
+**/secret*
+
+# Databases
+**/database*
+
