@@ -13,7 +13,7 @@ def check(data: dict) -> dict | str:
     return data["token"]
 
 
-@api.route("/login", methods=["GET", "POST"])
+@api.post("/login")
 def login():
 
     success, data = decode()
@@ -34,7 +34,7 @@ def login():
     return {"exit_code": INVALID_USERNAME_OR_PASSWORD, "error_message": "Invalid username or password!"}
 
 
-@api.route("/logout", methods=["GET", "POST"])
+@api.post("/logout")
 def logout():
 
     success, data = decode()

@@ -12,34 +12,36 @@
                  Copyright Nikocraft 2023 - All rights reserved
 
 
---------
-OVERVIEW
---------
+----------
+ OVERVIEW 
+----------
 
 A shopping manager, but synced with all other group members.
 
 
---------
-PROTOCOL
---------
+-----
+ API 
+-----
 
 -- General --
-Type: HTTPS
+Protocol: HTTPS
 Format: JSON
 
 
-------
-SERVER
-------
+--------
+ SERVER 
+--------
 
 -- General --
 Language: Python
+Framework: Flask
 Platform: Linux & Windows
+Database: SQLite3
 
 
-------
-MOBILE
-------
+--------
+ MOBILE 
+--------
 
 -- General --
 Language: Dart

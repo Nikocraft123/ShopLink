@@ -1,15 +1,14 @@
 from flask import Blueprint, request
 import json
 
-from .error import *
 
 api = Blueprint("v1", __name__)
 
 
-def decode() -> tuple[bool, dict]:
+from .error import *
 
-    if request.method == "GET":
-        return False, {"exit_code": USING_GET, "error_message": "Cannot use GET! Please use POST!"}
+
+def decode() -> tuple[bool, dict]:
 
     try:
         data = json.loads(request.data.decode("utf-8"))
@@ -24,11 +23,11 @@ def decode() -> tuple[bool, dict]:
 from . import auth
 
 
-@api.route("/", methods=["GET", "POST"])
+@api.post("/")
 def missing_function():
     return {"exit_code": MISSING_FUNCTION, "error_message": "Missing function! Example: /api/v1/login/"}
 
 
-@api.route("/<path:func>/", methods=["GET", "POST"])
+@api.post("/<path:func>/")
 def invalid_function(func):
     return {"exit_code": INVALID_FUNCTION, "error_message": "Invalid function! Example: /api/v1/login/"}
